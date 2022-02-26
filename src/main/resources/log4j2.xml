@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+    <Appenders>
+
+        <!--
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
+        </Console>
+
+        <File name="LogFile" fileName="c:/logs/logs.log">
+            <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
+        </File>
+        -->
+
+        <RollingFile name="tracelog" fileName="c:/logs/trace.log" filePattern="c:/logs/trace.%i.%d{MMM}.log">
+            <LevelRangeFilter minLevel="FATAL" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
+        <RollingFile name="infoLog" fileName="c:/logs/info.log" filePattern="c:/logs/info.%i.%d{MMM}.log">
+            <LevelRangeFilter minLevel="FATAL" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d [%-6p] %M(%F:%L) – %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
+        <RollingFile name="fatallog" fileName="c:/logs/fatal.log" filePattern="c:/logs/fatal.%i.%d{MMM}.log">
+            <LevelRangeFilter minLevel="FATAL" maxLevel="FATAL" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L)  %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
+   </Appenders>
+    <Loggers>
+
+        <Root level="all">
+            <!-- <AppenderRef ref="LogFile" />
+                      <AppenderRef ref="LogToConsole"/> -->
+            <AppenderRef ref="tracelog" />
+            <AppenderRef ref="infoLog"  />
+            <AppenderRef ref="fatallog" />
+         </Root>
+    </Loggers>
+</Configuration>

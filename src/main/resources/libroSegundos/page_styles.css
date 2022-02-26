@@ -1,0 +1,27 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "Garamond";
+    src: url("fonts/Garamond - Regular.ttf")
+    }
+@font-face {
+    font-family: "Calibri";
+    src: url("fonts/Calibri - Regular.ttf")
+    }
+@font-face {
+    font-family: "Garamond";
+    font-style: italic;
+    src: url("fonts/Garamond - Italic.ttf")
+    }
+@font-face {
+    font-family: "Calibri Light";
+    font-weight: bold;
+    src: url("fonts/Calibri Light - Bold.ttf")
+    }
+@font-face {
+    font-family: "Garamond";
+    font-weight: bold;
+    src: url("fonts/Garamond - Bold.ttf")
+    }

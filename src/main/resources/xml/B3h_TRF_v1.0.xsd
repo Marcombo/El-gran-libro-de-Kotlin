@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:documentation xml:lang="es">Esquema que define Lista de perfiles y tarifas de título (fichero de tarifas) (TRF) (TLV=B3h)</xs:documentation>
+    </xs:annotation>
+    <xs:element name="Empresa_Propietaria_Cod" type="xs:string"/>
+    <xs:element name="Empresa_Propietaria_Perf" type="xs:string"/>
+    <xs:element name="Fecha_Cambio_Tarifa" type="xs:string"/>
+    <xs:element name="Fecha_Fin_Admision" type="xs:string"/>
+    <xs:element name="Fecha_Inicio_Admision" type="xs:string"/>
+    <xs:element name="Informacion_Tarifas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Titulo" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="TipoTLV" use="required">
+                <xs:simpleType>
+                    <xs:annotation>
+                        <xs:documentation xml:lang="es">Esta TLV debe tener siempre uno de los valores especificados en la restricción</xs:documentation>
+                    </xs:annotation>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="B3|B3h"/>
+                    </xs:restriction>    
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Version" use="required">
+                <xs:simpleType>
+                    <xs:annotation>
+                        <xs:documentation xml:lang="es">El número de version debe ser siempre 1.0</xs:documentation>
+                    </xs:annotation>
+                    <xs:restriction base="xs:float">
+                        <xs:pattern value="1.0"/>
+                    </xs:restriction>    
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Perfil">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Empresa_Propietaria_Perf"/>
+                <xs:element ref="Tarifa" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="Codigo" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Tarifa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Tipo_Unidades" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="TipoUnidades" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Unidades" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Fecha_Inicio_Admision" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Fecha_Cambio_Tarifa" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Fecha_Fin_Admision" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TipoUnidades" type="xs:string"/>
+    <xs:element name="Tipo_Unidades" type="xs:string"/>
+    <xs:element name="Titulo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Empresa_Propietaria_Cod" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Perfil" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="Codigo" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Unidades" type="xs:int"/>
+</xs:schema>
