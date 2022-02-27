@@ -2,8 +2,10 @@
 El gran libro de Kotlin
 (para programadores de back end)
 
-Editor: Marcombo (https://www.marcombo.com/)
+Editorial: Marcombo (https://www.marcombo.com/)
 Autor: Luis Criado Fernández (http://luis.criado.online/)
+
+ANEXO
  */
 
 package marcombo.lcriadof.anexo
