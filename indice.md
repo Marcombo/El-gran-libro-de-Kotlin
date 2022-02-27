@@ -14,7 +14,7 @@ CAPÍTULO 3: IDE PARA KOTLIN
 ## EXPERIMENTANDO CON KOTLIN EN BACK END	
 
 CAPÍTULO 4: POCO CÓDIGO Y GRANDES RESULTADOS 
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo4)
+[código fuente](https://github.com/Marcombo/El-gran-libro-de-Kotlin/tree/main/src/main/kotlin/marcombo/lcriadof/capitulo4)
 
 	El primer programa en kotlin	
 	Programa para escribir varias líneas de un fichero de texto.	
@@ -25,7 +25,7 @@ CAPÍTULO 4: POCO CÓDIGO Y GRANDES RESULTADOS
 	Acceso a un recurso de un proyecto Maven.	
 
 CAPÍTULO 5: FUNCIONES	
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo5)
+[código fuente](https://github.com/Marcombo/El-gran-libro-de-Kotlin/tree/main/src/main/kotlin/marcombo/lcriadof/capitulo5)
 
 	Funciones que no requieren parámetros de entrada y salida	
 	Funciones con parámetro de entrada y sin parámetro de salida	
