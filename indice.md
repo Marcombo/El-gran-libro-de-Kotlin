@@ -14,7 +14,7 @@ CAPÍTULO 3: IDE PARA KOTLIN
 ## EXPERIMENTANDO CON KOTLIN EN BACK END	
 
 CAPÍTULO 4: POCO CÓDIGO Y GRANDES RESULTADOS 
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo4)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo4)
 
 	El primer programa en kotlin	
 	Programa para escribir varias líneas de un fichero de texto.	
@@ -25,7 +25,7 @@ CAPÍTULO 4: POCO CÓDIGO Y GRANDES RESULTADOS
 	Acceso a un recurso de un proyecto Maven.	
 
 CAPÍTULO 5: FUNCIONES	
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo5)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo5)
 
 	Funciones que no requieren parámetros de entrada y salida	
 	Funciones con parámetro de entrada y sin parámetro de salida	
@@ -39,7 +39,7 @@ CAPÍTULO 5: FUNCIONES
 	Funciones de orden superior	
 
 CAPÍTULO 6: CLASES	
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo6)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo6)
 
 	6.1. Definición de una clase y compatibilidad con Java	
 	6.2. Experimentando con métodos	
@@ -61,7 +61,7 @@ CAPÍTULO 6: CLASES
 		6.6.2. Inicialización tardía para: val	
 		
 CAPÍTULO 7: FICHEROS	
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo7/fichero)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo7/fichero)
 
 	7.1 Trazas o logs: log4j2.	
 		7.1.1. Configurando log4j2 por consola	
@@ -75,7 +75,7 @@ CAPÍTULO 7: FICHEROS
 	7.9 ePub.	
 
 CAPÍTULO 8: BASES DE DATOS	
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo8)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo8)
 
 	8.1 Montar el entorno de pruebas	
 	8.2 Relational DBMS	
@@ -89,7 +89,7 @@ CAPÍTULO 8: BASES DE DATOS
 		8.3.3. RDF Stores: Apache Jena, Virtuoso y AllegroGraph	
 
 CAPÍTULO 9: NÚMEROS.
-[código fuente](https://github.com/lcriadof/AtreveteConKotlin/tree/master/src/main/java/io/github/lcriadof/atrevete/kotlin/capitulo9)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo9)
 
 	9.1 Los números árabes.	
 	9.2 Colecciones útiles para números.	
