@@ -2,7 +2,7 @@
 El gran libro de Kotlin
 (para programadores de back end)
 
-Editor: Marcombo (https://www.marcombo.com/)
+Editorial: Marcombo (https://www.marcombo.com/)
 Autor: Luis Criado Fernández (http://luis.criado.online/)
 
 CAPÍTULO 7: FICHEROS
