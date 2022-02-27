@@ -14,7 +14,7 @@ CAPÍTULO 3: IDE PARA KOTLIN
 ## EXPERIMENTANDO CON KOTLIN EN BACK END	
 
 CAPÍTULO 4: POCO CÓDIGO Y GRANDES RESULTADOS 
-[código fuente](https://github.com/Marcombo/El-gran-libro-de-Kotlin/tree/main/src/main/kotlin/marcombo/lcriadof/capitulo4)
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo4)
 
 	El primer programa en kotlin	
 	Programa para escribir varias líneas de un fichero de texto.	
