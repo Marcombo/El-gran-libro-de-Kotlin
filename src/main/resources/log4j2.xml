@@ -2,16 +2,23 @@
 <Configuration status="TRACE">
     <Appenders>
 
-        <!--
+
+        <!-- definición solo consola -->
+
         <Console name="LogToConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
         </Console>
 
+
+        <!-- definición solo consola -->
+        <!--
         <File name="LogFile" fileName="c:/logs/logs.log">
             <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
         </File>
         -->
 
+        <!-- definición ficheros rotatorios -->
+        <!--
         <RollingFile name="tracelog" fileName="c:/logs/trace.log" filePattern="c:/logs/trace.%i.%d{MMM}.log">
             <LevelRangeFilter minLevel="FATAL" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d [%-6p] %C{1}.%M(%F:%L) – %m%n"/>
@@ -41,16 +48,23 @@
             </Policies>
             <DefaultRolloverStrategy max="7"/>
         </RollingFile>
+        -->
 
    </Appenders>
     <Loggers>
 
         <Root level="all">
-            <!-- <AppenderRef ref="LogFile" />
-                      <AppenderRef ref="LogToConsole"/> -->
+
+            <!-- definición solo consola -->
+             <AppenderRef ref="LogFile" />
+                      <AppenderRef ref="LogToConsole"/>
+
+            <!-- definición ficheros rotatorios -->
+            <!--
             <AppenderRef ref="tracelog" />
             <AppenderRef ref="infoLog"  />
             <AppenderRef ref="fatallog" />
+            -->
          </Root>
     </Loggers>
 </Configuration>
