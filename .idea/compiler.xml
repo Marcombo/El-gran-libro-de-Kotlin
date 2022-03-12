@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="El-gran-libro-de-Kotlin" target="8" />
+      <module name="El-gran-libro-de-Kotlin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
