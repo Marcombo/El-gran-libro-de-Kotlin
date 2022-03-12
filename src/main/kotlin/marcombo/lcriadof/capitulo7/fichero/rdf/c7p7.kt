@@ -80,10 +80,10 @@ fun main(){
 
     // leemos ficheros RDF/XML
     modeloA.read(FileInputStream(url+"modelo1.rdf"), ""); // [17]
-    modeloB.read(FileInputStream("/tmp/modelo2.rdf"), ""); // [18]
+    modeloB.read(FileInputStream(url+"modelo2.rdf"), ""); // [18]
     // Unimos dos modelos
     val modeloUnido: Model = modeloA.union(modeloB) // [19]
-    modeloUnido.write(FileOutputStream("/tmp/modeloUnido.rdf"), "RDF/XML-ABBREV"); // [20]
+    modeloUnido.write(FileOutputStream(url+"modeloUnido.rdf"), "RDF/XML-ABBREV"); // [20]
     println("------------------")
 
 
