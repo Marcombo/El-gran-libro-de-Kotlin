@@ -1,0 +1,180 @@
+municipio_codigo;municipio_nombre;municipio_codigo_ine;nuts4_codigo;nuts4_nombre;superficie_km2;densidad_por_km2
+001;Acebeda (La);280014;06;Sierra Norte;21.86;3.02
+002;Ajalvir;280029;03;Este Metropolitano;19.80;225.00
+003;Alameda del Valle;280035;06;Sierra Norte;25.70;7.74
+004;Alamo (El);280040;09;Sudoeste Comunidad;22.00;415.86
+005;Alcalá de Henares;280053;03;Este Metropolitano;88.11;2205.31
+006;Alcobendas;280066;02;Norte Metropolitano;45.24;2538.99
+007;Alcorcón;280072;04;Sur Metropolitano;33.57;5008.67
+008;Aldea del Fresno;280088;09;Sudoeste Comunidad;51.66;50.64
+009;Algete;280091;02;Norte Metropolitano;38.01;537.20
+010;Alpedrete;280105;11;Sierra Central;12.66;1124.80
+011;Ambite;280112;08;Sudeste Comunidad;51.60;13.12
+012;Anchuelo;280127;08;Sudeste Comunidad;21.59;57.34
+013;Aranjuez;280133;04;Sur Metropolitano;189.01;307.99
+014;Arganda del Rey;280148;03;Este Metropolitano;80.27;670.50
+015;Arroyomolinos;280151;09;Sudoeste Comunidad;20.78;1401.73
+016;Atazar (El);280164;06;Sierra Norte;28.43;3.41
+017;Batres;280170;09;Sudoeste Comunidad;21.36;75.37
+018;Becerril de la Sierra;280186;11;Sierra Central;29.64;184.11
+019;Belmonte de Tajo;280199;08;Sudeste Comunidad;24.07;67.64
+020;Berzosa del Lozoya;280203;06;Sierra Norte;14.62;13.89
+021;Berrueco (El);280210;06;Sierra Norte;28.40;26.16
+022;Boadilla del Monte;280225;05;Oeste Metropolitano;47.38;1086.18
+023;Boalo (El);280231;11;Sierra Central;39.40;186.75
+024;Braojos;280246;06;Sierra Norte;24.93;8.34
+025;Brea de Tajo;280259;08;Sudeste Comunidad;44.73;12.05
+026;Brunete;280262;05;Oeste Metropolitano;49.17;210.96
+027;Buitrago del Lozoya;280278;06;Sierra Norte;25.92;71.53
+028;Bustarviejo;280284;06;Sierra Norte;56.13;42.74
+029;Cabanillas de la Sierra;280297;06;Sierra Norte;13.81;51.56
+030;Cabrera (La);280301;06;Sierra Norte;22.14;116.08
+031;Cadalso de los Vidrios;280318;10;Sierra Sur;47.84;63.82
+032;Camarma de Esteruelas;280323;07;Nordeste Comunidad;35.15;201.54
+033;Campo Real;280339;08;Sudeste Comunidad;61.75;97.09
+034;Canencia;280344;06;Sierra Norte;54.18;8.27
+035;Carabaña;280357;08;Sudeste Comunidad;47.64;40.72
+036;Casarrubuelos;280360;09;Sudoeste Comunidad;5.33;684.80
+037;Cenicientos;280376;10;Sierra Sur;68.25;29.07
+038;Cercedilla;280382;11;Sierra Central;40.82;167.88
+039;Cervera de Buitrago;280395;06;Sierra Norte;11.54;13.52
+040;Ciempozuelos;280409;04;Sur Metropolitano;49.41;480.41
+041;Cobeña;280416;02;Norte Metropolitano;20.79;344.54
+042;Colmenar del Arroyo;280421;10;Sierra Sur;49.31;33.10
+043;Colmenar de Oreja;280437;08;Sudeste Comunidad;126.33;61.82
+044;Colmenarejo;280442;11;Sierra Central;31.49;286.28
+045;Colmenar Viejo;280455;02;Norte Metropolitano;182.88;265.82
+046;Collado Mediano;280468;11;Sierra Central;22.19;300.41
+047;Collado Villalba;280474;05;Oeste Metropolitano;25.19;2467.33
+048;Corpa;280480;08;Sudeste Comunidad;25.94;26.37
+049;Coslada;280493;03;Este Metropolitano;12.02;6906.07
+050;Cubas de la Sagra;280506;09;Sudoeste Comunidad;12.89;474.17
+051;Chapinería;280513;10;Sierra Sur;25.55;87.08
+052;Chinchón;280528;08;Sudeste Comunidad;115.79;45.25
+053;Daganzo de Arriba;280534;07;Nordeste Comunidad;43.40;232.30
+054;Escorial (El);280549;11;Sierra Central;68.81;226.16
+055;Estremera;280552;08;Sudeste Comunidad;79.13;15.94
+056;Fresnedillas de la Oliva;280565;10;Sierra Sur;28.34;54.69
+057;Fresno de Torote;280571;07;Nordeste Comunidad;31.75;66.61
+058;Fuenlabrada;280587;04;Sur Metropolitano;39.18;4968.58
+059;Fuente el Saz de Jarama;280590;07;Nordeste Comunidad;33.15;193.79
+060;Fuentidueña de Tajo;280604;08;Sudeste Comunidad;60.18;32.90
+061;Galapagar;280611;05;Oeste Metropolitano;65.20;504.65
+062;Garganta de los Montes;280626;06;Sierra Norte;40.33;8.21
+063;Gargantilla del Lozoya y Pinilla de Buitrago;280632;06;Sierra Norte;24.18;13.03
+064;Gascones;280647;06;Sierra Norte;20.07;8.77
+065;Getafe;280650;04;Sur Metropolitano;78.59;2268.58
+066;Griñón;280663;09;Sudoeste Comunidad;17.09;588.65
+067;Guadalix de la Sierra;280679;06;Sierra Norte;60.26;100.38
+068;Guadarrama;280685;11;Sierra Central;57.18;273.17
+069;Hiruela (La);280698;06;Sierra Norte;17.16;3.03
+070;Horcajo de la Sierra-Aoslos;280702;06;Sierra Norte;21.20;6.70
+071;Horcajuelo de la Sierra;280719;06;Sierra Norte;23.83;3.69
+072;Hoyo de Manzanares;280724;05;Oeste Metropolitano;45.23;177.58
+073;Humanes de Madrid;280730;04;Sur Metropolitano;19.66;997.30
+074;Leganés;280745;04;Sur Metropolitano;43.23;4342.35
+075;Loeches;280758;08;Sudeste Comunidad;44.32;192.35
+076;Lozoya;280761;06;Sierra Norte;57.69;9.69
+078;Madarcos;280783;06;Sierra Norte;8.55;5.38
+079;Madrid ;280796;01;Municipio de Madrid;604.66;5264.08
+080;Majadahonda;280800;05;Oeste Metropolitano;38.47;1853.37
+082;Manzanares el Real;280822;11;Sierra Central;128.31;66.25
+083;Meco;280838;07;Nordeste Comunidad;34.93;388.49
+084;Mejorada del Campo;280843;03;Este Metropolitano;17.93;1279.87
+085;Miraflores de la Sierra;280856;11;Sierra Central;56.40;103.14
+086;Molar (El);280869;07;Nordeste Comunidad;50.19;169.18
+087;Molinos (Los);280875;11;Sierra Central;19.16;226.77
+088;Montejo de la Sierra;280881;06;Sierra Norte;32.18;11.06
+089;Moraleja de Enmedio;280894;09;Sudoeste Comunidad;31.17;156.24
+090;Moralzarzal;280908;11;Sierra Central;43.56;286.87
+091;Morata de Tajuña;280915;08;Sudeste Comunidad;45.29;165.20
+092;Móstoles;280920;04;Sur Metropolitano;44.90;4601.09
+093;Navacerrada;280936;11;Sierra Central;27.51;105.20
+094;Navalafuente;280941;06;Sierra Norte;12.18;110.02
+095;Navalagamella;280954;10;Sierra Sur;75.76;32.25
+096;Navalcarnero;280967;09;Sudoeste Comunidad;100.84;273.40
+097;Navarredonda y San Mamés;280973;06;Sierra Norte;28.47;4.60
+099;Navas del Rey;280992;10;Sierra Sur;50.51;54.46
+100;Nuevo Baztán;281006;08;Sudeste Comunidad;20.10;303.03
+101;Olmeda de las Fuentes;281013;08;Sudeste Comunidad;16.52;20.10
+102;Orusco de Tajuña;281028;08;Sudeste Comunidad;21.36;57.02
+104;Paracuellos de Jarama;281049;03;Este Metropolitano;43.78;546.03
+106;Parla;281065;04;Sur Metropolitano;25.02;5031.89
+107;Patones;281071;06;Sierra Norte;35.07;15.77
+108;Pedrezuela;281087;06;Sierra Norte;28.54;196.67
+109;Pelayos de la Presa;281090;10;Sierra Sur;7.57;326.02
+110;Perales de Tajuña;281104;08;Sudeste Comunidad;49.07;57.41
+111;Pezuela de las Torres;281111;08;Sudeste Comunidad;41.68;19.58
+112;Pinilla del Valle;281126;06;Sierra Norte;25.45;7.27
+113;Pinto;281132;04;Sur Metropolitano;61.98;813.84
+114;Piñuecar-Gandullas;281147;06;Sierra Norte;18.24;10.03
+115;Pozuelo de Alarcón;281150;05;Oeste Metropolitano;43.10;1986.19
+116;Pozuelo del Rey;281163;08;Sudeste Comunidad;30.91;35.55
+117;Prádena del Rincón;281179;06;Sierra Norte;22.50;5.87
+118;Puebla de la Sierra;281185;06;Sierra Norte;56.69;1.08
+119;Quijorna;281198;09;Sudoeste Comunidad;25.68;127.80
+120;Rascafría;281202;06;Sierra Norte;149.28;11.20
+121;Redueña;281219;06;Sierra Norte;13.03;19.03
+122;Ribatejada;281224;07;Nordeste Comunidad;32.16;21.83
+123;Rivas-Vaciamadrid;281230;03;Este Metropolitano;67.43;1242.28
+124;Robledillo de la Jara;281245;06;Sierra Norte;21.02;4.14
+125;Robledo de Chavela;281258;10;Sierra Sur;94.15;43.26
+126;Robregordo;281261;06;Sierra Norte;18.35;2.40
+127;Rozas de Madrid (Las);281277;05;Oeste Metropolitano;58.28;1631.28
+128;Rozas de Puerto Real;281283;10;Sierra Sur;29.55;18.07
+129;San Agustín del Guadalix;281296;02;Norte Metropolitano;38.22;342.83
+130;San Fernando de Henares;281300;03;Este Metropolitano;38.84;1021.65
+131;San Lorenzo de El Escorial;281317;11;Sierra Central;56.38;319.69
+132;San Martín de la Vega;281322;04;Sur Metropolitano;105.10;179.11
+133;San Martín de Valdeiglesias;281338;10;Sierra Sur;116.42;71.28
+134;San Sebastián de los Reyes;281343;02;Norte Metropolitano;59.10;1467.12
+135;Santa María de la Alameda;281356;10;Sierra Sur;75.66;15.37
+136;Santorcaz;281369;08;Sudeste Comunidad;28.22;30.33
+137;Santos de la Humosa (Los);281375;08;Sudeste Comunidad;34.82;71.40
+138;Serna del Monte (La);281381;06;Sierra Norte;5.52;13.22
+140;Serranillos del Valle;281408;09;Sudoeste Comunidad;13.29;298.50
+141;Sevilla la Nueva;281415;09;Sudoeste Comunidad;24.74;367.54
+143;Somosierra;281436;06;Sierra Norte;20.40;3.77
+144;Soto del Real;281441;11;Sierra Central;42.84;200.91
+145;Talamanca de Jarama;281454;07;Nordeste Comunidad;38.48;92.85
+146;Tielmes;281467;08;Sudeste Comunidad;26.58;98.19
+147;Titulcia;281473;08;Sudeste Comunidad;10.11;126.01
+148;Torrejón de Ardoz;281489;03;Este Metropolitano;32.42;3948.58
+149;Torrejón de la Calzada;281492;09;Sudoeste Comunidad;8.97;938.46
+150;Torrejón de Velasco;281505;09;Sudoeste Comunidad;52.16;81.69
+151;Torrelaguna;281512;06;Sierra Norte;43.06;109.43
+152;Torrelodones;281527;05;Oeste Metropolitano;21.67;1067.28
+153;Torremocha de Jarama;281533;06;Sierra Norte;18.86;49.95
+154;Torres de la Alameda;281548;08;Sudeste Comunidad;43.34;180.55
+155;Valdaracete;281551;08;Sudeste Comunidad;63.80;10.08
+156;Valdeavero;281564;07;Nordeste Comunidad;18.71;77.50
+157;Valdelaguna;281570;08;Sudeste Comunidad;42.26;20.52
+158;Valdemanco;281586;06;Sierra Norte;17.79;51.49
+159;Valdemaqueda;281599;10;Sierra Sur;51.79;14.83
+160;Valdemorillo;281603;11;Sierra Central;93.80;131.13
+161;Valdemoro;281610;04;Sur Metropolitano;64.16;1152.99
+162;Valdeolmos-Alalpardo;281625;07;Nordeste Comunidad;25.84;151.16
+163;Valdepiélagos;281631;07;Nordeste Comunidad;17.66;33.24
+164;Valdetorres de Jarama;281646;07;Nordeste Comunidad;35.07;123.07
+165;Valdilecha;281659;08;Sudeste Comunidad;42.57;64.72
+166;Valverde de Alcalá;281662;08;Sudeste Comunidad;13.74;31.08
+167;Velilla de San Antonio;281678;03;Este Metropolitano;14.37;842.80
+168;Vellón (El);281684;06;Sierra Norte;33.49;54.76
+169;Venturada;281697;06;Sierra Norte;10.22;198.83
+170;Villaconejos;281701;08;Sudeste Comunidad;33.27;100.69
+171;Villa del Prado;281718;09;Sudoeste Comunidad;77.27;82.01
+172;Villalbilla;281723;08;Sudeste Comunidad;34.72;375.52
+173;Villamanrique de Tajo;281739;08;Sudeste Comunidad;29.58;23.46
+174;Villamanta;281744;09;Sudoeste Comunidad;63.23;39.40
+175;Villamantilla;281757;09;Sudoeste Comunidad;23.92;57.78
+176;Villanueva de la Cañada;281760;05;Oeste Metropolitano;34.76;584.58
+177;Villanueva del Pardillo;281776;11;Sierra Central;25.43;669.48
+178;Villanueva de Perales;281782;09;Sudoeste Comunidad;31.43;48.33
+179;Villar del Olmo;281795;08;Sudeste Comunidad;27.78;71.89
+180;Villarejo de Salvanés;281809;08;Sudeste Comunidad;119.00;60.88
+181;Villaviciosa de Odón;281816;05;Oeste Metropolitano;68.20;403.28
+182;Villavieja del Lozoya;281821;06;Sierra Norte;23.30;11.46
+183;Zarzalejo;281837;10;Sierra Sur;20.18;79.09
+901;Lozoyuela-Navas-Sieteiglesias;289015;06;Sierra Norte;51.43;24.05
+902;Puentes Viejas;289020;06;Sierra Norte;58.54;10.80
+903;Tres Cantos;289036;02;Norte Metropolitano;37.95;1213.33
