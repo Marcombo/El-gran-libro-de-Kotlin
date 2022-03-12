@@ -30,6 +30,22 @@ fun main(){
     var sujeto:String=""
     var sujetoBak:String=""
     var ciclo=0
+    sIter.forEach { // [4]
+        sujeto=it.getSubject().toString()
+        if (!sujeto.equals(sujetoBak)){ // [5]
+            ciclo++
+            println("**********************************************")
+            println("número de instancia: "+ciclo)
+            println("    tripletas que contiene: ")
+        }
+        println("sujeto: " +it.getSubject().toString() ) // [6]
+        println("predicado: " + it.getPredicate().toString()) // [7]
+        println("objeto: " +it.getObject().toString() ) // [8]
+        println("------------ x -------------")
+        sujetoBak=it.getSubject().toString()
+    }
+
+/* // código  tradicional
     for (i in sIter) { // [4]
 
         sujeto=i.getSubject().toString()
@@ -45,5 +61,7 @@ fun main(){
         println("------------ x -------------")
         sujetoBak=i.getSubject().toString()
     }
+
+    */
     println("------------------")
 }
