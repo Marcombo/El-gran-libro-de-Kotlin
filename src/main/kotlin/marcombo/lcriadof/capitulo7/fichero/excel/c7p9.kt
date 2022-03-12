@@ -17,7 +17,7 @@ import java.io.FileReader
 
 fun main(){
     var url= recursos::class.java.getResource("/excelcsv/").path
-    var entrada= File(url+"201612_detalle.csv")
+    var entrada= File(url+"SalesJan2009.csv")
     if (entrada.exists()){ // [1]
         val reader = CSVReader(FileReader(entrada.getAbsolutePath()),  ';') // [2]
 
