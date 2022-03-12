@@ -23,7 +23,7 @@ import java.io.File
 
 fun main(){
     val model: OntModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM) // [1]
-    val NS = "atrevete.kotlin.animales"  // [2]
+    val NS = "marcombo.lcriadof.animales"  // [2]
     model.setNsPrefix(NS, "http://www.owl-ontologies.com/OntologyAnimals.owl")
 
     // [3]
