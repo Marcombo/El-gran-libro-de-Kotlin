@@ -19,28 +19,27 @@ import java.io.FileOutputStream
 
 fun main(){
  try {
-    var book = Book() // [1] // Creamos un libro epub
-    book.metadata.addTitle("fragmento de SEGUNDOS para probar") // [2] Añadimos el título
-    book.metadata.addAuthor(Author("Luis Criado", "Autor")) // [3] Añadimos el nombre del autor
+    var book = Book() // [1]
+    book.metadata.addTitle("fragmento de SEGUNDOS para probar") // [2]
+    book.metadata.addAuthor(Author("Luis Criado", "Autor")) // [3]
 
-     // Set cover image
-    book.setCoverImage( Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cover.jpg"), "cover.jpg") );
+    book.setCoverImage( Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cover.jpg"), "cover.jpg") ); // [4]
 
+    Resource(recursos::class.java.getResourceAsStream("/libroSegundos/titlepage.xhtml"), "titlepage.html") // [5]
+    book.addSection("Capítulo 1", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap1.html"), "capitulo1.html")) // [6]
+    book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/page_styles.css"), "book1.css")) // [7]
+    book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/stylesheet.css"), "book1.css")) // [8]
 
-    book.addSection("Capítulo 1", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap1.html"), "capitulo1.html")) // [4] Añadimos el capitulo 1 localizado en \recurces\book1
-    book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/page_styles.css"), "book1.css")) // [5] Incorporamos el fichero de estilo CSS
-    book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/stylesheet.css"), "book1.css")) // [5] Incorporamos el fichero de estilo CSS
-
-    book.addSection("Capítulo 2", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap2.html"), "capitulo2.html")) // [4] Añadimos el capitulo 1 localizado en \recurces\book1
+    book.addSection("Capítulo 2", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap2.html"), "capitulo2.html")) // [9]
 
 // Add Chapter 37
-     book.addSection("Capítulo 37", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap37.html"), "capitulo37.html"))
+     book.addSection("Capítulo 37", Resource(recursos::class.java.getResourceAsStream("/libroSegundos/cap37.html"), "capitulo37.html")) // [10]
 // Add image used by Chapter 37
-     book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/image1.jpeg"), "image1.jpeg"))
+     book.resources.add(Resource(recursos::class.java.getResourceAsStream("/libroSegundos/image1.jpeg"), "image1.jpeg")) // [11]
 
 
-    val epubWriter = EpubWriter() // [10] creamos el objeto para escribir en disco local
-    epubWriter.write(book, FileOutputStream("prueba5.epub")) // [11] escribimos el epub en un fichero
+    val epubWriter = EpubWriter() // [12]
+    epubWriter.write(book, FileOutputStream(recursos::class.java.getResource("/libroSegundos/").path+"segundos_muestra.epub")) // [13]
  } catch (e: Exception) {
     e.printStackTrace()
  }
