@@ -11,7 +11,7 @@ import java.util.zip.ZipOutputStream
 
 class ficheroZip(var url:String) {
 
-    // comprime solo una lista de ficheros concreta
+    // comprime solo una agrupación de ficheros concreta
     fun comprimir(fichZipOut:String,vararg fichOrigen:String){ // [1]
         var file:File  // [2]
         var entry: ZipEntry // [3]
@@ -22,10 +22,10 @@ class ficheroZip(var url:String) {
             entry = ZipEntry(url+fichin) // [7]
             try {
                 val buf = ByteArray(1024) // [8]
-                ops.putNextEntry(entry) // [9] Coloca el objeto en el documento comprimido
-                ops.setComment("fichero "+fichin) // [10]  Crear un comentario de documento
+                ops.putNextEntry(entry) // [9]
+                ops.setComment("fichero "+fichin) // [10]
 
-                // [11] BLOQUE QUE COMPRIME UNA ENTRADA
+                // [11] inicio del BLOQUE QUE COMPRIME UNA ENTRADA
                 val fis = FileInputStream(file)
                 var len: Int
                 while (fis.read(buf).also { len = it } > 0) {  // [12] copiamos con bloques determinados por "buf" del fichero origen al flujo zip
@@ -33,7 +33,7 @@ class ficheroZip(var url:String) {
                 }
                 fis.close()
                 ops.closeEntry()
-                // FIN DEL bloque
+                // [13] fin del BLOQUE
 
             } catch (e: IOException) {
                 // en caso de error ejecutar este código
@@ -46,6 +46,8 @@ class ficheroZip(var url:String) {
     }
 
 
+
+
     // comprime un directorio completo con todo su contenido solo al primer nivel
     fun comprimir(fichZipOut:String){
         var entry: ZipEntry
@@ -53,17 +55,17 @@ class ficheroZip(var url:String) {
         val buf = ByteArray(1024)
 
 
-        File(url).walkTopDown().forEach { // [13] recorremos todo el directorio
+        File(url).walkTopDown().forEach { // [14]
             entry = ZipEntry(it.name)
             println(it.name)
 
             if (it.isFile and !it.extension.equals("zip")){
-                ops.putNextEntry(entry) // Coloca el objeto en el documento comprimido
-                ops.setComment("fichero "+it) // Crear un comentario de documento
+                ops.putNextEntry(entry) // [15]
+                ops.setComment("fichero "+it) // [16]
 
                 val fis = FileInputStream(it)
                 var len: Int
-                while (fis.read(buf).also { len = it } > 0) {  // copiamos con bloques determinados por "buf" del fichero origen al flujo zip
+                while (fis.read(buf).also { len = it } > 0) {  // [17]
                     ops.write(buf, 0, len)
                 }
                 fis.close()
@@ -80,23 +82,76 @@ class ficheroZip(var url:String) {
     fun descomprimir(){
         var nombreFicheroZip: String = ""
 
-        File(url).walkTopDown().forEach { // [14]  // recorremos todo el directorio y descomprimimos los zip
+        File(url).walkTopDown().forEach { // [18]  // recorremos todo el directorio y descomprimimos los zip
             nombreFicheroZip = it.canonicalFile.toString()
-            if (it.isFile and it.extension.equals("zip")) { // [15]
+            if (it.isFile and it.extension.equals("zip")) { // [19]
                 println("Fichero zip encontrado: "+it)
-                ZipFile(nombreFicheroZip).use { zip -> // [16]
-                    zip.entries().asSequence().forEach { entrada -> // [17]
-                            if (entrada.isDirectory){ // [18] si la entrada es un directorio: lo creamos para replicar la extructura comprimida
+                ZipFile(nombreFicheroZip).use { zip ->
+                    zip.entries().asSequence().forEach { entrada -> // [20]
+                            if (entrada.isDirectory){ // [21]
                                val nuevoPath: String = url+entrada.name
                                println(".....directorio creado: "+nuevoPath)
-                               File(nuevoPath).mkdirs()
-                            } else{ // [19] si la entrada es un fichero: descomprimimos
+                               File(nuevoPath).mkdirs() // [22]
+                            } else{ // [23]
                                 zip.getInputStream(entrada).use {
                                         input ->
                                     println(".....descomprimiendo "+File(url+entrada.name).canonicalFile)
-                                    File(url+entrada.name).outputStream().use { output -> input.copyTo(output) } // [20]
+                                    File(url+entrada.name).outputStream().use { output -> input.copyTo(output) } // [24]
                                 }
                             }
+                    }
+
+
+                } // fin de ZipFile
+            } // fin de if
+        } // fin de descomprimir
+    } // fin de método
+
+
+    fun descomprimir(entradaAdescomprimir:String){
+        var nombreFicheroZip: String = ""
+
+        File(url).walkTopDown().forEach {
+            nombreFicheroZip = it.canonicalFile.toString()
+            if (it.isFile and it.extension.equals("zip")) {
+                println("Fichero zip encontrado: "+it)
+                ZipFile(nombreFicheroZip).use { zip ->
+                    zip.entries().asSequence().forEach {entrada ->
+                        //println("  "+File(entrada.name)+" + "+entradaAdescomprimir)
+                        //println(entrada.name.substringAfterLast("/"))
+                        if (entrada.isDirectory){
+                            val nuevoPath: String = url+entrada.name
+                            //println(".....directorio creado: "+nuevoPath)
+                            File(nuevoPath).mkdirs()
+                        } else{
+                            if (entrada.name.substringAfterLast("/").equals(entradaAdescomprimir)){  // [25]
+                                zip.getInputStream(entrada).use {
+                                    input ->
+                                println(".....descomprimiendo "+File(url+entrada.name).canonicalFile)
+                                File(url+entrada.name).outputStream().use { output -> input.copyTo(output) }
+                                }
+                            }
+                        }
+                    }
+                } // fin de ZipFile
+            } // fin de if
+        } // fin de descomprimir
+    } // fin de método
+
+
+
+    fun listaFicherosComprimidos(){
+        var nombreFicheroZip: String = ""
+
+        File(url).walkTopDown().forEach {
+            nombreFicheroZip = it.canonicalFile.toString()
+            if (it.isFile and it.extension.equals("zip")) {
+                println("Fichero zip encontrado: "+it)
+
+                ZipFile(nombreFicheroZip).use { zip ->
+                    zip.entries().asSequence().forEach { // [26]
+                        println("     entrada loclizada en zip: "+it)
+
                     }
 
 
