@@ -28,7 +28,7 @@ class ficheroZip(var url:String) {
                 // [11] inicio del BLOQUE QUE COMPRIME UNA ENTRADA
                 val fis = FileInputStream(file)
                 var len: Int
-                while (fis.read(buf).also { len = it } > 0) {  // [12] copiamos con bloques determinados por "buf" del fichero origen al flujo zip
+                while (fis.read(buf).also { len = it } > 0) {  // [12]
                     ops.write(buf, 0, len)
                 }
                 fis.close()
