@@ -72,7 +72,8 @@ CAPÍTULO 7: FICHEROS
 	7.5 RDF y OWL	
 	7.6 Excel y CSVs.	
 	7.7 Json.	
-	7.9 ePub.	
+	7.9 ePub.
+	7.10 Zip
 
 CAPÍTULO 8: BASES DE DATOS	
 [código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo8)
