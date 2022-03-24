@@ -9,6 +9,9 @@ CAPÍTULO 9: CADENAS Y PALABRAS.
  */
 package marcombo.lcriadof.capitulo10
 
+import java.text.SimpleDateFormat
+import java.util.*
+
 fun main(){
 
 var cad1:String="hola mundo"
@@ -23,11 +26,17 @@ var cad2:Char='h'
 
     println(Int.MAX_VALUE)
 
+
+    val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+    val currentDate = sdf.format(Date())
+    System.out.println(" C DATE is "+currentDate)
+
     cad1=""
     for (i in 1..Int.MAX_VALUE){
         cad1=cad1+"A"
         //println(cad1)
     }
     println(cad1)
+    System.out.println(" C DATE is "+currentDate)
 
 }
