@@ -29,14 +29,23 @@ var cad2:Char='h'
 
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     val currentDate = sdf.format(Date())
-    System.out.println(" C DATE is "+currentDate)
+    println(" C DATE is "+currentDate)
 
     cad1=""
-    for (i in 1..Int.MAX_VALUE){
+    var i=0
+    try {
+      for (i in 1..Int.MAX_VALUE){
         cad1=cad1+"A"
         //println(cad1)
+      }
+    }catch (e: Exception){
+        println(e)
+        println(i)
     }
+
+
     println(cad1)
-    System.out.println(" C DATE is "+currentDate)
+
+    println(" C DATE is "+currentDate)
 
 }
