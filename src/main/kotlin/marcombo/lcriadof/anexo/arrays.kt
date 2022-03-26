@@ -22,7 +22,8 @@ fun main(){
     val f2= IntArray(5,{i->10})
     println(f2.joinToString())
 
-
+    val generatedArray = IntArray(10) { i -> i * i }
+    val generatedStringArray = Array(10) { i -> "Number of index: $i"  }
 
     val cadenas = arrayOf("Lunes", "Martes", "Miercoles","Jueves")
 
