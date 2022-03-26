@@ -51,8 +51,8 @@ println(soneto.trimIndent())
     //     un String
 
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-    val currentDate = sdf.format(Date())
-    println("Inicio del proceso: "+currentDate)
+    var currentDate = sdf.format(Date())
+
     cad1=""
     var i=0
     try {
@@ -66,8 +66,9 @@ println(soneto.trimIndent())
 
     cad1=cad1+"\n<<<FIN>>>"
     println(cad1)
+    println("Inicio del proceso: "+currentDate)
+    currentDate = sdf.format(Date())
     println("Fin del proceso: "+currentDate)
-
 
 
 
