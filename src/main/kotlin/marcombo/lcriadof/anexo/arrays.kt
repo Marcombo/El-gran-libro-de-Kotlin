@@ -14,11 +14,17 @@ package marcombo.lcriadof.anexo
 fun main(){
 
     // ejemplos arrays de una dimensión
+    val nums = intArrayOf(25, 125, 1966, 2200)
+
     val f= Array<Int>(5,{i->0}) // array de 5 elementos tipo Int inicializado a cero
     println(f.joinToString())
 
     val f2= IntArray(5,{i->10})
     println(f2.joinToString())
+
+
+
+    val cadenas = arrayOf("Lunes", "Martes", "Miercoles","Jueves")
 
     val f3= Array<String>(5,{i->""})
     println(f3.joinToString())

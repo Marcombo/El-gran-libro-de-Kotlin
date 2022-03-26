@@ -49,14 +49,14 @@ println(soneto.trimIndent())
     //     este código está comentado pues requiere mucho tiempo para
     //     comprobar el numero máximo de caracteres que puede contener
     //     un String
-    /*
+
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     val currentDate = sdf.format(Date())
     println("Inicio del proceso: "+currentDate)
     cad1=""
     var i=0
     try {
-      for (i in 1..Int.MAX_VALUE){
+      for (i in 1..7000000){
         cad1=cad1+"A"
       }
     }catch (e: Exception){
@@ -64,9 +64,10 @@ println(soneto.trimIndent())
         println(i)
     }
 
+    cad1=cad1+"\n<<<FIN>>>"
     println(cad1)
     println("Fin del proceso: "+currentDate)
-    */
+
 
 
 
