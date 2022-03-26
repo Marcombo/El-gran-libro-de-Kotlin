@@ -45,14 +45,11 @@ println(soneto.trimIndent())
     // Valor máximo de un Int
     println(Int.MAX_VALUE)
 
-    // comprobamos por fuerza bruta que tamaño puede almacenar un String
-    //     este código está comentado pues requiere mucho tiempo para
-    //     comprobar el numero máximo de caracteres que puede contener
-    //     un String
 
+    //     este código está comentado pues requiere mucho tiempo
+   /*
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     var currentDate = sdf.format(Date())
-
     cad1=""
     var i=0
     try {
@@ -70,6 +67,8 @@ println(soneto.trimIndent())
     currentDate = sdf.format(Date())
     println("Fin del proceso: "+currentDate)
 
+
+    */
 
 
 
