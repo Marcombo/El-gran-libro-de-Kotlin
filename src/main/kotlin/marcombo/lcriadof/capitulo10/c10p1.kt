@@ -45,7 +45,7 @@ fun main(){
 
 
     // este codigo requiere tiempo, por ello está comentado
-    /*
+   /*
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     var currentDate = sdf.format(Date())
 
