@@ -15,19 +15,37 @@ import java.util.*
 
 fun main(){
 
-var cad1:String="hola mundo"
-var cad2:Char='h'
+    var cad2:Char='h'
 
-    println("BITs de representación: ")
-    println("Char,   "+Char.SIZE_BITS)
+    var cad1:String="hola mundo"
+    println(cad1)
+    var caracteres_especiales="\u221e \u00AB \u0394 \u215E"
+    println(caracteres_especiales)
 
-    println(cad1.length)
-    var l:Int=0
-    l=cad1.length
+    val soneto = """
+    último terceto del SONETO Si para recobrar lo recobrado
+    AUTOR: Francisco Luis Bernárdez
+        Porque después de todo he comprendido 
+        Que lo que el árbol tiene de florido
+        Vive de lo que tiene sepultado.
+"""
+    println(soneto)
+    println(soneto.length)
 
+    // eliminar sangría
+    println(soneto.trimIndent())
+
+
+    // conocer la longitud de un String
+    var l:Int=cad1.length
+    println(l)
+    // Valor máximo de un Int
     println(Int.MAX_VALUE)
 
 
+
+    // este codigo requiere tiempo, por ello está comentado
+    /*
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     var currentDate = sdf.format(Date())
 
@@ -46,5 +64,5 @@ var cad2:Char='h'
     println(" tiempo: "+currentDate)
     currentDate = sdf.format(Date())
     println(" tiempo: "+currentDate)
-
+     */
 }
