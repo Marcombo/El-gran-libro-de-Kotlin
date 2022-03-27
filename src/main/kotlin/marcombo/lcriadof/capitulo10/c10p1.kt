@@ -34,7 +34,7 @@ var cad2:Char='h'
     cad1=""
     var i=0
     try {
-      for (i in 1..700*1024){
+      for (i in 1..7000*1024){
         cad1=cad1+"A"
       }
     }catch (e: Exception){
