@@ -44,25 +44,32 @@ fun main(){
 
 
 
-    // este codigo requiere tiempo, por ello está comentado
-   /*
+    // este codigo requiere unos minitos, por ello está comentado
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     var currentDate = sdf.format(Date())
-
     cad1=""
     var i=0
     try {
-      for (i in 1..7000*1024){
+      for (i in 1..716800){
         cad1=cad1+"A"
       }
     }catch (e: Exception){
         println(e)
         println(i)
     }
-    File("/tmp/kotlin/string.txt").writeText(cad1)
+    File("/tmp/string.txt").writeText(cad1)
+    cad1=""
+    File("/tmp/string.txt").forEachLine { cad1=cad1+it }
+    var cad5:String=cad1+cad1+cad1+cad1+cad1+"***************"
+    var cad10=cad5+cad5
+    File("/tmp/string10.txt").writeText(cad10)
+    println(cad10)
 
+    var cad150=cad10+cad10+cad10
+    File("/tmp/string150.txt").writeText(cad150)
     println(" tiempo: "+currentDate)
     currentDate = sdf.format(Date())
     println(" tiempo: "+currentDate)
-     */
+
+
 }
