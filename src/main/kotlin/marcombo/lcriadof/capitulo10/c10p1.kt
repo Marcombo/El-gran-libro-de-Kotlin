@@ -44,7 +44,7 @@ fun main(){
 
 
 
-    // este codigo requiere unos minitos, por ello está comentado
+    // generamos un string de 21000 Kbytes
     val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
     var currentDate = sdf.format(Date())
     cad1=""

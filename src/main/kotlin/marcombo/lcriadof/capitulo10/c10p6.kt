@@ -13,9 +13,9 @@ CAPÍTULO 9: CADENAS Y PALABRAS.
 fun main() {
 // padding
 
-    val nums = intArrayOf(25, 125, 1966, 2200)
+    val nums = intArrayOf(1001, 11000, 10001001, 110)
     // visualizar relleno por la izquierda
-    nums.toList().forEach { it -> println(it.toString().padStart(6, '0')) }
+    nums.toList().forEach { it -> println(it.toString().padStart(8, '0')) }
 
     val cadenas = arrayOf("Lunes", "Martes", "Miercoles","Jueves")
     cadenas.forEach { println(it) } // visualizar la matriz
