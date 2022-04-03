@@ -44,12 +44,6 @@ fun main() {
 
 
 
-    //  Map donde la clave y valor son Strings
-    var f5: MutableMap<String, String> = mutableMapOf() // [1] inicializamos una variable MutableMap
-    var y=0
-    for (y in 0..cadenas2.size-1){
-        f5.put(cadenas2[y],cadenas[y]) // [2]
-    }
-    println( f5.toString() ) // [3]
+
 
 }
