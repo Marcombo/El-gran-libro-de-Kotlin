@@ -13,7 +13,7 @@ fun main() {
 // conversores
 
     // Obtener el código ascii
-
+    println("<<<< codigo ASCII >>>>>")
     // desde un Char
     var cad1:Char='A'
     var valor_ascii=cad1.code
@@ -21,8 +21,11 @@ fun main() {
 
     // desde un String
     var cad2:String="Hola Mundo!!!"
+    println(cad2[2].toChar().code)
     println("El código ASCII de [$cad2] es letra a letra:")
     cad2.forEach { caracter -> println("   ASCII de [$caracter] es "+caracter.code) }
+
+
     println("-----------------" )
 
     // de Int a ASCII
@@ -40,33 +43,34 @@ fun main() {
     println("-----------------" )
 
 
+
+    println("<<<< HEXADECIMAL >>>>>")
     // de Int a hexadecimal
     val num = 4316
     val hex = Integer.toHexString(num)
-    val bin = Integer.toBinaryString(num)
     println("El número $num en hexadecimal es [$hex]")
-    println("El número $num en binario es [$bin]")
+
 
     // de Hexadecimal a Int
     val hex2 = "7FFFFFFF"
     val num2: Int = hex2.toInt(16)
-    println(num2)     // 2147483647
-
-
-    // de Binario a Int
-    val hex3 = "0100"
-    val num3: Int = hex3.toInt(2)
-    println(num3)     // 4
-
+    println("El número hexadecimal $hex2 en decimal es [$num2]")
 
     val hex4 = "7FFFFFFFFFFFFFF"
     val decimal4 = hex4.toLong(16)
-    println(decimal4)     // 576460752303423487
+    println("El número hexadecimal $hex4 en decimal es [$decimal4]")
 
 
 
+    println("<<<< BINARIO >>>>>")
+    // de Int a hexadecimal
+    val num4 = 4316
+    val bin = Integer.toBinaryString(num4)
+    println("El número $num en binario es [$bin]")
 
-
-
+    // de Binario a Int
+    val bin2 = "0100"
+    val num3: Int = bin2.toInt(2)
+    println("El número binario $bin2 en decimal es [$num3]")
 
 }
