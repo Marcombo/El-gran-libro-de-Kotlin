@@ -69,14 +69,7 @@ fun main(args: Array<String>) {
             println("\nError : Sequence contains space(s)")
             break
         }
-/*
-        limitar++
-        if (limitar>100000){
-            break;
-        }
 
-
- */
     }
     sc.close()
     println("Totales -> d_adenina: $d_adenina, d_guanina: $d_guanina, d_citosina: $d_citosina, d_timina: $d_timina")
