@@ -22,13 +22,14 @@ fun checkNoSpaces(s: String) = ' ' !in s && '\t' !in s
 fun main(args: Array<String>) {
     var first = true
     val sc = Scanner(File("/tmp/chm13v2.0.fa/chm13v2.0.fa"))
-    var limitar=0
+    var lin_adenina=0.0;var lin_guanina=0.0; var lin_citosina=0.0;var lin_timina=0.0
     var titulo=""
     var cormosoma=0;
     var d_adenina=0.0;var d_guanina=0.0; var d_citosina=0.0;var d_timina=0.0
     var adenina=0.0;var guanina=0.0; var citosina=0.0;var timina=0.0
     while (sc.hasNextLine()) {
         val line = sc.nextLine()
+
         if (line[0] == '>') {
             if (cormosoma>0){
                 println(" -> adenina: $adenina, guanina: $guanina, citosina: $citosina, timina: $timina")
@@ -45,7 +46,6 @@ fun main(args: Array<String>) {
             println("${line.substring(1)}: \n")
             if (first) first = false
 
-
             cormosoma++
         }
 
@@ -54,11 +54,15 @@ fun main(args: Array<String>) {
             break
         }
         else if (checkNoSpaces(line)){
-            adenina=adenina+repeticiones(line,"a")
-            guanina=guanina+repeticiones(line,"g")
-            citosina=citosina+repeticiones(line,"c")
-            timina=timina+repeticiones(line,"t")
-           // print(line)  // cada línea tiene 80 caracteres
+            lin_adenina=repeticiones(line,"a")+repeticiones(line,"A")+0.0
+            adenina=adenina+lin_adenina
+            lin_guanina=repeticiones(line,"g")+repeticiones(line,"G")+0.0
+            guanina=guanina+lin_guanina
+            lin_citosina=repeticiones(line,"c")+repeticiones(line,"C")+0.0
+            citosina=citosina+lin_citosina
+            lin_timina=repeticiones(line,"t")+repeticiones(line,"T")+0.0
+            timina=timina+lin_timina
+
 
         }
         else {
