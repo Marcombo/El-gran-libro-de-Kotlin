@@ -45,8 +45,9 @@ fun main() {
 
 
     println("<<<< HEXADECIMAL >>>>>")
+
     // de Int a hexadecimal
-    val num = 4316
+    val num:Int = 4316
     val hex = Integer.toHexString(num)
     println("El número $num en hexadecimal es [$hex]")
 
@@ -64,7 +65,7 @@ fun main() {
 
     println("<<<< BINARIO >>>>>")
     // de Int a hexadecimal
-    val num4 = 4316
+    val num4:Int = 4316
     val bin = Integer.toBinaryString(num4)
     println("El número $num en binario es [$bin]")
 
