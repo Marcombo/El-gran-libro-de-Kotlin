@@ -11,6 +11,8 @@ CAPÍTULO 7: FICHEROS
 
 import java.util.Scanner
 import java.io.File
+import java.time.Duration
+import java.time.Instant
 
 
 // especificaciones del formato FASTA (.fa)
@@ -27,6 +29,11 @@ fun main(args: Array<String>) {
     var cormosoma=0;
     var d_adenina=0.0;var d_guanina=0.0; var d_citosina=0.0;var d_timina=0.0
     var adenina=0.0;var guanina=0.0; var citosina=0.0;var timina=0.0
+
+    var inicio = Instant.now() // marcamos el momento inicial
+    println("comienzo: "+inicio)
+
+
     while (sc.hasNextLine()) {
         val line = sc.nextLine()
 
@@ -43,7 +50,7 @@ fun main(args: Array<String>) {
             if (!first) println()
             titulo=line.substring(1)
 
-            println("${line.substring(1)}: \n")
+            println("${line.substring(1)}: ")
             if (first) first = false
 
             cormosoma++
@@ -76,6 +83,11 @@ fun main(args: Array<String>) {
     var total=d_adenina+d_guanina+d_citosina+d_timina
     println("Totales de nucleotidos: "+total)
 
+    var fin = Instant.now() // marcamos el tiempo final
+    println("fin: "+fin)
+    var tiempoEmpleado = Duration.between(inicio, fin).toMillis()
+    println("tiempo empleado: "+tiempoEmpleado+" milisegundos")
+    println("tiempo empleado: "+tiempoEmpleado/1000+" segundos")
 
 }
 
