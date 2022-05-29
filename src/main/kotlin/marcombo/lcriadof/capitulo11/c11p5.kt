@@ -117,7 +117,7 @@ fun main(){
             return contador
         }
 
-        //@Synchronized // ejemplo de no hace cuando no hace falta
+        @Synchronized // ejemplo de no hace cuando no hace falta
         private fun repeticiones(texto:String,encontrar:String):Int{
             var contador=0
             var posicion=0
