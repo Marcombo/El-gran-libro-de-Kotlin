@@ -1,5 +1,15 @@
 package marcombo.lcriadof.capitulo11
 
+/*
+El gran libro de Kotlin
+(para programadores de back end)
+
+Editorial: Marcombo (https://www.marcombo.com/)
+Autor: Luis Criado Fernández (http://luis.criado.online/)
+
+CAPÍTULO 11: CONCURRENCIA
+ */
+
 import java.io.File
 import java.util.concurrent.SynchronousQueue
 import kotlin.concurrent.thread
