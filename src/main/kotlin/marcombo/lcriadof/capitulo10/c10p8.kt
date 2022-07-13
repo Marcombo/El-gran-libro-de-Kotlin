@@ -10,7 +10,7 @@ El gran libro de Kotlin
 Editorial: Marcombo (https://www.marcombo.com/)
 Autor: Luis Criado Fernández (http://luis.criado.online/)
 
-CAPÍTULO 9: CADENAS.
+CAPÍTULO 10: CADENAS.
  */
 
 fun main() {
