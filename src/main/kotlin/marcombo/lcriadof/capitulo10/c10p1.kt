@@ -5,7 +5,7 @@ El gran libro de Kotlin
 Editorial: Marcombo (https://www.marcombo.com/)
 Autor: Luis Criado Fernández (http://luis.criado.online/)
 
-CAPÍTULO 9: CADENAS Y PALABRAS.
+CAPÍTULO 9: CADENAS.
  */
 package marcombo.lcriadof.capitulo10
 
