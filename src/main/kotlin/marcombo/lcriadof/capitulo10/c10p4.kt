@@ -8,7 +8,7 @@ Autor: Luis Criado Fernández (http://luis.criado.online/)
 
 CAPÍTULO 9: CADENAS.
  */
-
+import java.math.BigInteger
 fun main() {
 // conversores
 
@@ -60,6 +60,12 @@ fun main() {
     val hex4 = "7FFFFFFFFFFFFFF"
     val decimal4 = hex4.toLong(16)
     println("El número hexadecimal $hex4 en decimal es [$decimal4]")
+
+
+    // convertir un numero decimal muy grande en hexadecimal
+    val a = BigInteger("1238494949949490033")
+    val convera=a.toString(16).padStart(64, '0')
+    println("El número $a (decimal) es equivalente al $convera (hexadecimal)")
 
 
 
