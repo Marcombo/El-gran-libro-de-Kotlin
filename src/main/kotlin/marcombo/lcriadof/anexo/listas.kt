@@ -75,6 +75,8 @@ fun main(){
     var list2=list.sorted()
     println("ver elemento 3: "+list2[2])
 
+    // aplicamos patrones de diseño: Pipeline
+    println("Pipeline:"+list.map { i-> i * i }.joinToString())
 
 
     // listas mutables
