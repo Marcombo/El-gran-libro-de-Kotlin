@@ -3,32 +3,30 @@ import java.util.concurrent.Semaphore // [1]
 /*
 El gran libro de Kotlin
 (para programadores de back end)
-
 Editorial: Marcombo (https://www.marcombo.com/)
 Autor: Luis Criado Fernández (http://luis.criado.online/)
-
 CAPÍTULO 11: CONCURRENCIA
  */
 
 fun main() {
 
-        val s = Semaphore(1) // [2]
+    val s = Semaphore(1) // [2]
 
-        val h1 = hiloGestionadoPorSemaforo(s) // [3]
-        val h2 = hiloGestionadoPorSemaforo(s)
-        val h3 = hiloGestionadoPorSemaforo(s)
-
-
-        h1.start() // [4]
-        h2.start()
-        h3.start()
-
-        h1.join() // [5]
-        h2.join()
-        h3.join()
+    val h1 = hiloGestionadoPorSemaforo(s) // [3]
+    val h2 = hiloGestionadoPorSemaforo(s)
+    val h3 = hiloGestionadoPorSemaforo(s)
 
 
-        println("Valor final del object: " + Contador.count)
+    h1.start() // [4]
+    h2.start()
+    h3.start()
+
+    h1.join() // [5]
+    h2.join()
+    h3.join()
+
+
+    println("Valor final del object: " + Contador.count)
 
 }
 

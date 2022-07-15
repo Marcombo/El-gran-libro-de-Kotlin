@@ -1,9 +1,6 @@
 package marcombo.lcriadof.capitulo11
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 // funciones de suspensión:
 //        Una función con el modificador de suspensión puede parar la ejecución del código sin bloquear el hilo actual de ejecución
@@ -16,7 +13,7 @@ import kotlinx.coroutines.runBlocking
 //    y el código con corrutinas dentro de runBlocking
 
 
-fun main()= runBlocking {
+fun main()= runBlocking() {
     var num=0
     repeat(10) {
         launch {

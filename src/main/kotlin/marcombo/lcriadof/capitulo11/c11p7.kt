@@ -1,8 +1,6 @@
 package marcombo.lcriadof.capitulo11
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 /*
 El gran libro de Kotlin
@@ -15,36 +13,39 @@ CAPÍTULO 11: CONCURRENCIA
  */
 
 
-
-// comparando hilos y corrutinas
-//------------------------------------
-// ejemplo de https://refactorizando.com/coroutines-kotlin-vs-java-threads/
-
-
 fun main() {
-
-    // hilos
-    println("Probando con thread")
-        repeat(10) {
-            Thread(Runnable {
-                println(" Número ${it}: ${Thread.currentThread().name}")
-            }).start()
-        }
-        Thread.sleep(100)
-    println()
 
     // corrutinas
     println("Probando con corrutinas")
-    repeat(10) {
-        GlobalScope.launch {
-            println("Antes de parar $it: ${Thread.currentThread().name}")
-            delay(10)
-            println("Despues de reanudar $it: ${Thread.currentThread().name}")
+
+
+
+    runBlocking() {
+
+        println("principio 1")
+
+        /*
+        GlobalScope.launch() {
+            println("\n parar")
+            delay(10) // si el retardo es mayor que lo que tiene que hacer el reetos del código entonces la ejecucion se termina sin que acabe GlobalScope.launch()
+            println("\n reanudar")
         }
+        */
+
+
+
+        var a = 0
+        for (i in 1..10000) {
+            print("$i, ")
+        }
+
+
+        println("final 1")
     }
-    Thread.sleep(200)
 
 
+
+    println("programa terminado")
 
 
 }
