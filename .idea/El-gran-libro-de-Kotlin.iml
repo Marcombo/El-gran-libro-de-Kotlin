@@ -212,7 +212,8 @@
     <orderEntry type="library" name="Maven: com.atomikos:transactions-api:4.0.6" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.atomikos:transactions:4.0.6" level="project" />
     <orderEntry type="library" name="Maven: com.atomikos:atomikos-util:4.0.6" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.android:android:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.0.1" level="project" />
