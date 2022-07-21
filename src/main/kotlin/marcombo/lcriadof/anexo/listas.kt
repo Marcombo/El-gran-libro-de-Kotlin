@@ -34,7 +34,41 @@ fun main(){
     println(mutableList)
 
 
+    // con este tipo de listas se pueden fabricar rápidamente pilas
+    //-------------------------------------------------------------------
+    println("ejemplo de uso de PILAS------------->")
+    var stackFIFO: MutableList<String> = mutableListOf()
+    var sizestackFIFO=5
 
+    // ejemplo de push en una pila de tamaño 500
+    println("  cargamos una pila con un tamaño de $sizestackFIFO")
+    for (i in 1..sizestackFIFO) {
+        stackFIFO.add("ooeoeoeeoeo kdkdkdkdkffjfjfjfjjf "+i)
+    }
+    println("tamaño pila "+stackFIFO.size )
+
+    // código para extraerlo en modo FiFO
+    println("  consumimos en FIFO")
+     while (stackFIFO.size>0){
+        println( stackFIFO.first() )
+        stackFIFO.removeAt(0)
+    }
+    println()
+
+    // ejemplo de push en una pila de tamaño 500
+    println("  cargamos una pila con un tamaño de $sizestackFIFO")
+    for (i in 1..sizestackFIFO) {
+        stackFIFO.add("ooeoeoeeoeo kdkdkdkdkffjfjfjfjjf "+i)
+    }
+    println("tamaño pila "+stackFIFO.size )
+
+
+    // código para extraerlo en modo LIFO
+    println("  consumimos en LIFO")
+    while (stackFIFO.size>0){
+        println( stackFIFO.removeLast()  )
+    }
+    println("/n <---------- fin ejemplo de uso de PILAS------------->")
 
 
 
