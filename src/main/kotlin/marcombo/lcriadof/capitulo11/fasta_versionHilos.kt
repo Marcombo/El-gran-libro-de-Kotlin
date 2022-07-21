@@ -56,6 +56,7 @@ fun main(){
 
         } // fin de forEachLine
         colaNucleotidos.put("fin")  // [6]  señal de finalización para un hilo consumidor
+
     }
 
 
@@ -113,14 +114,24 @@ fun main(){
     val hilo1=consumidorNucleotidos()
     hilo1.start()
 
+
     productorNucleotidos.join()
     hilo1.join()
 
 
-    println("Fin del programa ")
+
+
+    // hay que sumar lo último pendiente
+    d_adenina=d_adenina+adenina
+    d_guanina=d_guanina+guanina
+    d_citosina=d_citosina+citosina
+    d_timina=d_timina+timina
+
+
+
     println("Totales -> d_adenina: $d_adenina, d_guanina: $d_guanina, d_citosina: $d_citosina, d_timina: $d_timina")
     var total=d_adenina+d_guanina+d_citosina+d_timina
-    println("Totales de nucleotidos: "+total)
+    println("Totales de bases nitrogenadas : "+total)
 
 
     var fin = Instant.now()

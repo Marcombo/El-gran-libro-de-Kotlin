@@ -1,5 +1,15 @@
 package marcombo.lcriadof.capitulo11
 
+/*
+El gran libro de Kotlin
+(para programadores de back end)
+
+Editorial: Marcombo (https://www.marcombo.com/)
+Autor: Luis Criado Fernández (http://luis.criado.online/)
+
+CAPÍTULO 11: CONCURRENCIA
+
+ */
 import kotlinx.coroutines.*
 
 // funciones de suspensión:
@@ -7,28 +17,32 @@ import kotlinx.coroutines.*
 //        además puede invocar otras funciones de suspensión.
 //
 //        Una función de suspensión no se puede invocar desde un código regular,
-//        sino solo desde otras funciones de suspensión y desde lambdas de suspensión
-
-// runBlocking  es un generador de corrutinas que une el mundo sin corrutinas de un fun main() normal
-//    y el código con corrutinas dentro de runBlocking
+//        sino solo desde otras funciones de suspensión (desde lambdas de suspensión) y desde corrutinas
 
 
-fun main()= runBlocking() {
-    var num=0
-    repeat(10) {
+fun main() {
+    runBlocking() { // [1]
         launch {
-            num = doWorld(num++)
-            println(num)
+            incrementar() // [2]
+            delay(1000L) // [3]
+            incrementar() // [2]
+        }
+        launch {
+            incrementar() // [2]
+            delay(10) // [3]
+            incrementar() // [2]
+        }
+        launch {
+            incrementar() // [2]
+            delay(20) // [3]
+            incrementar() // [2]
         }
     }
-    println("Hello")
-
-
+    println("Valor del contador ${Contador.count}") // [4]
 
 }
 
-suspend fun doWorld(n:Int):Int {
-    delay(1000L)
-    println("World!")
-    return 12+n
+suspend fun incrementar() { // [5]
+    Contador.count++
+
 }

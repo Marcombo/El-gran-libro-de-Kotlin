@@ -1,44 +1,35 @@
 package marcombo.lcriadof.capitulo11
+/*
+El gran libro de Kotlin
+(para programadores de back end)
 
-// dice que es un demonio, le he puesto yo el nombre, extraido de
-//    https://github.com/kazukousen/kotlin-daemon-example/blob/master/src/main/kotlin/com/github/kazukousen/kt_example/Hoge.kt
-//    yo veo este demonio en el hilo principal, no sirve
-import java.io.File
-import java.lang.Runtime
-import java.lang.Thread
-import java.lang.Thread.sleep
-import java.time.ZonedDateTime
+Editorial: Marcombo (https://www.marcombo.com/)
+Autor: Luis Criado Fernández (http://luis.criado.online/)
 
-object demonio {
-    fun run() {
-        Misc.print("Hello, World!")
+CAPÍTULO 11: CONCURRENCIA
+
+ */
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.*
+
+fun main() = runBlocking<Unit> {
+    val canal = Channel<String>() // [0]
+
+    launch { // [1]
+        canal.send("lote: 83838833-1") // [3]
+        canal.send("lote: 93939393-2") // [3]
+        println("Terminado el envio corrutina 1")
     }
 
-}
-
-object Misc {
-    fun print(s: String) {
-        println("[${ZonedDateTime.now()}] ${s}")
+    launch { // [1]
+        canal.send("lote: 93939393-3") // [3]
+        println("Terminado el envio  corrutina 2")
     }
 
-    fun printErr(s: String) {
-        println("[${ZonedDateTime.now()}] ${s}")
-    }
-}
-
-class ShutdownThread : Thread() {
-    override fun run() {
-        Misc.print("get HUP signal.")
-        Misc.print("Shutdown.")
-    }
-}
-
-fun main() {
-
-    Runtime.getRuntime().addShutdownHook(ShutdownThread())  // ejecuta un Thread antes de que la JVM finalice.
-
-    while(true) {
-        demonio.run()
-        Thread.sleep(5000L)
+    launch { // [2]
+        repeat(3) {
+            val x = canal.receive() // [4]
+            println("recibido: "+x)
+        }
     }
 }

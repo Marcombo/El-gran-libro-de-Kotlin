@@ -1,25 +1,46 @@
 package marcombo.lcriadof.capitulo11
+/*
+El gran libro de Kotlin
+(para programadores de back end)
 
+Editorial: Marcombo (https://www.marcombo.com/)
+Autor: Luis Criado Fernández (http://luis.criado.online/)
+
+CAPÍTULO 11: CONCURRENCIA
+
+ */
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.util.Timer
-import kotlin.concurrent.schedule
-import kotlin.concurrent.scheduleAtFixedRate
 
-// se suponia que era un demonio, pero no funciona
-//   https://jamie.mccrindle.org/posts/exploring-kotlin-standard-library-part-3/
+fun main() = runBlocking<Unit> {
+    val canal = Channel<String>()
 
-fun main()= runBlocking{
-    // create a daemon thread
-    val timer = Timer("schedule", true);
-
-    // schedule a single event
-    timer.schedule(1000) {
-        println("hello world!")
+    suspend fun incrementar2() { // [5]
+        var lote=0
+        Contador.count++
+        lote=83838833+Contador.count
+        canal.send(lote.toString()) // [3]
     }
-    // schedule at a fixed rate
-    val scheduleAtFixedRate = timer.scheduleAtFixedRate(1000, 1000) {
-        println("hello world!")
 
+    launch { // [1]
+        incrementar2()
+        incrementar2()
+        println("Terminado el envio corrutina 1")
     }
+
+    launch { // [1]
+        incrementar2()
+        println("Terminado el envio  corrutina 2")
+    }
+
+    launch { // [2]
+        repeat(3) {
+            val x = canal.receive() // [4]
+            println("recibido: "+x)
+        }
+    }
+
+
 
 }

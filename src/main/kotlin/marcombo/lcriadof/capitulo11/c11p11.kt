@@ -1,117 +1,124 @@
 package marcombo.lcriadof.capitulo11
 
-import java.util.concurrent.*
+import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+
+//import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
+import java.io.File
+import java.time.Duration
+import java.time.Instant
+import java.util.*
+
 
 /*
+El gran libro de Kotlin
+(para programadores de back end)
+
+Editorial: Marcombo (https://www.marcombo.com/)
+Autor: Luis Criado Fernández (http://luis.criado.online/)
+
+CAPÍTULO 11: CONCURRENCIA
+ */
+
 fun main() {
 
-    val m = Monitor(3)
-    val p = Productor(m, 6, 2000)
-    val c = Consumidor(m, 6, 4000)
+    var first = true
+    var titulo=""
+    var cromosoma=0;
+    var lineas=0.0
+    var totalAGTC: Double =0.0
+   // val canal = Channel<String>(UNLIMITED) // buffer del canal ilimitado
+    val canal = Channel<String>(5000)
+    val cerrojo = Mutex()
 
 
-    p.start()
-    c.start()
-}
+
+    var inicio = Instant.now()
+    println("comienzo: "+inicio)
 
 
-class Monitor(capacidad: Int) {
-    private var buff: CharArray? = null
-    private var tope = 0
-    private var lleno = false
-    private var vacio = true
 
-    init {
-        buff = CharArray(capacidad)
-    }
+    runBlocking() {
+        suspend fun contador_total(agtc:Double) {
+            totalAGTC = totalAGTC + agtc
 
-    @Synchronized
-    @Throws(java.lang.Exception::class)
-    fun poner(c: Char) {
-        // Mientras el buffer este lleno nos blockeamos
-        // para que el consumidor de consumir algun caracter
-        while (lleno) {
-            wait()
         }
 
-        // seccion critica
-        buff!![tope++] = c
-        vacio = false
-        lleno = tope >= buff!!.size
-        ObjectSubstitutions.notifyAll()
-    }
+        launch(Dispatchers.IO) { // productor requiere tiempo de lectura de fichero
+            val sc = Scanner(File("/tmp/chm13v2.0.fa/chm13v2.0.fa"))
 
-    @Synchronized
-    @Throws(java.lang.Exception::class)
-    fun sacar(): Char {
-        // Mientras el buffer este vacio nos blockeamos para
-        // que el productor pueda de producir un caracter
-        while (vacio) {
-            wait()
-        }
+            while (sc.hasNextLine()) {
+                val line = sc.nextLine()
+                if (line[0] == '>') {
 
-        // seccion critica
-        val c = buff!![--tope]
-        lleno = false
-        vacio = tope == 0
-        ObjectSubstitutions.notifyAll()
-        return c
-    }
-}
+                    if (!first) println()
+                    titulo=line.substring(1)
+
+                    println("${line.substring(1)}: ")
+                    if (first) first = false
+
+                    cromosoma++
+                }else{
+                    canal.send(line)
+                    lineas++
+                 }
+            } // fin de while
+            canal.send("fin") // añadir por cada consumidor una línea igual
+            canal.send("fin") // añadir por cada consumidor una línea igual
+
+            sc.close()
+           println("[productor] fin ")
+         } // fin de productor
 
 
 
-class Consumidor(private val buff: Monitor, private val n: Int, private val sleep: Int) : Thread() {
-    override fun run() {
-        try {
-            var c: Char
-            for (i in 0 until n) {
-                c = buff.sacar()
-                println("Consumi: $c")
-                sleep((Math.random() * sleep).toInt().toLong())
+
+
+        launch(Dispatchers.Default) { // consumidor requiera proceso de CPU
+            // variables de trabajo interno
+            var cNucleotido=""
+            var timinaT=0.0
+            var adeninaT=0.0
+            var citosinaT=0.0
+            var guaninaT=0.0
+            // fin de definición de variables de trabajo interno
+            delay(500) // esperamos 0.5 segundo para dar tiempo de llenar el canal
+            while (true) {
+
+                cerrojo.withLock{
+                    cNucleotido = canal.receive()
+                }
+
+                if (!cNucleotido.equals("fin")) {
+                    timinaT = timinaT+nucleotido('T', cNucleotido)
+                    adeninaT = adeninaT+nucleotido('A', cNucleotido)
+                    citosinaT = citosinaT+nucleotido('C', cNucleotido)
+                    guaninaT = guaninaT+ nucleotido('G', cNucleotido)
+                 } else {
+                    break
+                }
             }
-        } catch (ex: java.lang.Exception) {
-            ex.printStackTrace()
-            throw RuntimeException(ex)
-        }
-    }
-}
+            println("Totales -> adenina: $adeninaT, guanina: $guaninaT, citosina: $citosinaT, timina: $timinaT")
+            contador_total(timinaT+adeninaT+citosinaT+guaninaT)
+            println("[consumidor] fin")
+        } // fin de consumidor
 
 
+    } // ------------ fin de runBlocking
 
-class Productor(b: Monitor, n: Int, s: Int) : Thread() {
-    private val buff: Monitor
-    private val n: Int
-    private val sleep: Int
-
-    init {
-        // el monitor
-        buff = b
-
-        // cuantos caracteres debe producir
-        this.n = n
-
-        // cuanto tiempo dormir entre caracter y caracter
-        sleep = s
-    }
-
-    override fun run() {
-        try {
-            var c: Char
-            for (i in 0 until n) {
-                c = ('A'.code + i).toChar()
-                buff.poner(c)
-                println("Produje: $c")
-                sleep((Math.random() * sleep).toInt().toLong())
-            }
-        } catch (ex: Exception) {
-            ex.printStackTrace()
-            throw RuntimeException(ex)
-        }
-    }
+    canal.close() // hemos terminado de enviar
+    println("Lineas leidas de fichero: "+lineas)
+    println("Totales de bases nitrogenadas: "+totalAGTC)
 
 
-}
+    var fin = Instant.now()
+    println("fin: "+fin)
+    var tiempoEmpleado = Duration.between(inicio, fin).toMillis()
+    println("tiempo empleado: "+tiempoEmpleado+" milisegundos")
+    println("tiempo empleado: "+tiempoEmpleado/1000+" segundos")
+    println("Fin del programa ")
 
+} // fin de main
 
- */
