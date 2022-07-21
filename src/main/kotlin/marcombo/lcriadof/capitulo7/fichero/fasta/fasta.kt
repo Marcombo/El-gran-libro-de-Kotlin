@@ -30,6 +30,8 @@ fun main(args: Array<String>) {
     var d_adenina=0.0;var d_guanina=0.0; var d_citosina=0.0;var d_timina=0.0
     var adenina=0.0;var guanina=0.0; var citosina=0.0;var timina=0.0
 
+    var lineas=0.0
+
     var inicio = Instant.now() // marcamos el momento inicial
     println("comienzo: "+inicio)
 
@@ -69,7 +71,7 @@ fun main(args: Array<String>) {
             citosina=citosina+lin_citosina
             lin_timina=repeticiones(line,"t")+repeticiones(line,"T")+0.0
             timina=timina+lin_timina
-
+            lineas++
 
         }
         else {
@@ -79,9 +81,17 @@ fun main(args: Array<String>) {
 
     }
     sc.close()
+
+    // hay que sumar lo último pendiente
+    d_adenina=d_adenina+adenina
+    d_guanina=d_guanina+guanina
+    d_citosina=d_citosina+citosina
+    d_timina=d_timina+timina
+
+    println("Lineas leidas de fichero: "+lineas)
     println("Totales -> d_adenina: $d_adenina, d_guanina: $d_guanina, d_citosina: $d_citosina, d_timina: $d_timina")
     var total=d_adenina+d_guanina+d_citosina+d_timina
-    println("Totales de nucleotidos: "+total)
+    println("Totales de bases nitrogenadas: "+total)
 
     var fin = Instant.now() // marcamos el tiempo final
     println("fin: "+fin)
