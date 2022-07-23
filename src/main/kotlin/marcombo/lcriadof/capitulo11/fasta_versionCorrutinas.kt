@@ -34,8 +34,14 @@ fun main() {
 
 
     //val canal = Channel<String>(UNLIMITED) // buffer del canal ilimitado
+
     val sizestackFIFO=5000  // tamaño de las pilas
     val sizeCanal=10000  // tamaño del canal
+
+
+
+
+
 
     val canal = Channel<String>(sizeCanal)
     val cerrojo = Mutex()
@@ -71,7 +77,7 @@ fun main() {
                 }else{
 
                     lineas++
-                    if (bandera){
+                    if (bandera){ // [1]
                         if (lineas>sizeCanal.toDouble()){
                             cerrojo.unlock()
                             bandera=false // esto es solo para tener el canal con suficiente buffer antes del consumo
@@ -86,8 +92,11 @@ fun main() {
             } // fin de while
             println("Lineasleidas de fichero: "+lineas)
             canal.send("fin") // añadir por cada consumidor una línea igual
-            canal.send("fin") // añadir por cada consumidor una línea igual
-            canal.send("fin") // añadir por cada consumidor una línea igual
+          //  canal.send("fin") // añadir por cada consumidor una línea igual
+          //  canal.send("fin") // añadir por cada consumidor una línea igual
+          //  canal.send("fin") // añadir por cada consumidor una línea igual
+          //  canal.send("fin") // añadir por cada consumidor una línea igual
+
             sc.close()
             println("[productor] fin ")
         } // fin de productor
@@ -103,7 +112,7 @@ fun main() {
             var citosinaT=0.0
             var guaninaT=0.0
 
-            var stackFIFO: MutableList<String> = mutableListOf()  // pila
+            var stackFIFO: MutableList<String> = mutableListOf()  // [1] pila
             var ciclo:Boolean=true
             // fin de definición de variables de trabajo interno
 
@@ -151,65 +160,6 @@ fun main() {
         } // fin de consumidor
 
 
-/*
-        launch(Dispatchers.Default) { // consumidor requiera proceso de CPU
-            // variables de trabajo interno
-            var cNucleotido=""
-            var timinaT=0.0
-            var adeninaT=0.0
-            var citosinaT=0.0
-            var guaninaT=0.0
-
-            var stackFIFO: MutableList<String> = mutableListOf()  // pila
-            var ciclo:Boolean=true
-            // fin de definición de variables de trabajo interno
-
-            delay(1000) // esperamos 1 segundo para que al hilo principal productor le de tiempo a tomar el control del cerrojo
-            println("consumidor listo para recibir")
-
-            while (ciclo) {
-                if (stackFIFO.size==0){ // si la pila ya no tine elemento, pedimos más
-                    cerrojo.withLock{ // esperamos hasta tener acceso
-                        //cNucleotido = canal.receive()   // codigo antiguo
-                        for (i in 1..sizestackFIFO) {  // cargamos la pila
-                            if (!canal.isEmpty){
-                                cNucleotido=canal.receive()
-                                stackFIFO.add(cNucleotido)
-                                if (cNucleotido.equals("fin")){  // esto hace que cada cliente recoja su señal de salida
-                                    break
-                                }
-
-                            } else{
-                                break
-                            }
-                        }
-                    }
-                }
-
-                // FIFO
-                if (stackFIFO.size>0){
-                    cNucleotido=stackFIFO.first()
-                    stackFIFO.removeAt(0)
-
-                    if (!cNucleotido.equals("fin")) {
-                        timinaT = timinaT+nucleotido('T', cNucleotido)
-                        adeninaT = adeninaT+nucleotido('A', cNucleotido)
-                        citosinaT = citosinaT+ nucleotido('C', cNucleotido)
-                        guaninaT = guaninaT+nucleotido('G', cNucleotido)
-                    } else {
-                        println("[consumidor] intentando salir")
-                        ciclo=false
-                        break
-                    }
-                }
-            }
-            contador_total(timinaT+adeninaT+citosinaT+guaninaT)
-            println("[consumidor] fin")
-        } // fin de consumidor
-
-
-
- */
 
     } // ------------ fin de runBlocking
 

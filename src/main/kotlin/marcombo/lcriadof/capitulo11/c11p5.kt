@@ -91,6 +91,11 @@ fun main(){
     nucleotidoG.join()
     nucleotidoC.join()
     nucleotidoT.join()
+    d_adenina=d_adenina+adenina
+    d_guanina=d_guanina+guanina
+    d_citosina=d_citosina+citosina
+    d_timina=d_timina+timina
+
 
     println("Totales -> d_adenina: $d_adenina, d_guanina: $d_guanina, d_citosina: $d_citosina, d_timina: $d_timina")
     var total=d_adenina+d_guanina+d_citosina+d_timina

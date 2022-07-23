@@ -41,7 +41,7 @@ fun main() {
 
 
     runBlocking() {
-        suspend fun contador_total(agtc:Double) {
+        suspend fun contador_total(agtc:Double) { // bloque [1]
             totalAGTC = totalAGTC + agtc
 
         }
@@ -65,7 +65,6 @@ fun main() {
                     lineas++
                  }
             } // fin de while
-            canal.send("fin") // añadir por cada consumidor una línea igual
             canal.send("fin") // añadir por cada consumidor una línea igual
 
             sc.close()
@@ -101,14 +100,16 @@ fun main() {
                 }
             }
             println("Totales -> adenina: $adeninaT, guanina: $guaninaT, citosina: $citosinaT, timina: $timinaT")
-            contador_total(timinaT+adeninaT+citosinaT+guaninaT)
             println("[consumidor] fin")
+            contador_total(timinaT+adeninaT+citosinaT+guaninaT)
+
         } // fin de consumidor
+
 
 
     } // ------------ fin de runBlocking
 
-    canal.close() // hemos terminado de enviar
+    canal.close() // CERRAMOS EL CANAL
     println("Lineas leidas de fichero: "+lineas)
     println("Totales de bases nitrogenadas: "+totalAGTC)
 
