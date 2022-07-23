@@ -112,50 +112,51 @@ fun main() {
             var citosinaT=0.0
             var guaninaT=0.0
 
-            var stackFIFO: MutableList<String> = mutableListOf()  // [1] pila
+            var stackFIFO: MutableList<String> = mutableListOf()  // [1]
             var ciclo:Boolean=true
             // fin de definición de variables de trabajo interno
 
-            delay(1000) // esperamos 1 segundo para que al hilo principal productor le de tiempo a tomar el control del cerrojo
+            delay(1000) // [2]
             println("consumidor listo para recibir")
 
-            while (ciclo) {
-                if (stackFIFO.size==0){ // si la pila ya no tine elemento, pedimos más
-                    cerrojo.withLock{ // esperamos hasta tener acceso
-                        //cNucleotido = canal.receive()   // codigo antiguo
-                        for (i in 1..sizestackFIFO) {  // cargamos la pila
-                            if (!canal.isEmpty){
-                                cNucleotido=canal.receive()
-                                stackFIFO.add(cNucleotido)
-                                if (cNucleotido.equals("fin")){  // esto hace que cada cliente recoja su señal de salida
+            while (ciclo) {  // [3]
+
+                // bloque [a] recepción de datos
+                if (stackFIFO.size==0){ // [4]
+                    cerrojo.withLock{ // [5]
+                        for (i in 1..sizestackFIFO) {  // [6]
+                            if (!canal.isEmpty){ // [7]
+                                cNucleotido=canal.receive() // [8]
+                                stackFIFO.add(cNucleotido) // [9]
+                                if (cNucleotido.equals("fin")){  // [10]
                                     break
                                 }
-
-                            } else{
+                            } else{ // [10b]
                                 break
                             }
                         }
                     }
                 }
 
-                // FIFO
-                if (stackFIFO.size>0){
-                    cNucleotido=stackFIFO.first()
-                    stackFIFO.removeAt(0)
+                // bloque [b] consumo de la pila en modo FIFO
+                if (stackFIFO.size>0){ // [11]
+                    cNucleotido=stackFIFO.first() // [12]
+                    stackFIFO.removeAt(0) // [13]
 
-                    if (!cNucleotido.equals("fin")) {
+                    if (!cNucleotido.equals("fin")) { // [14]
                         timinaT = timinaT+nucleotido('T', cNucleotido)
                         adeninaT = adeninaT+nucleotido('A', cNucleotido)
                         citosinaT = citosinaT+ nucleotido('C', cNucleotido)
                         guaninaT = guaninaT+nucleotido('G', cNucleotido)
-                    } else {
+                    } else { // [15]
                         println("[consumidor] intentando salir")
                         ciclo=false
                         break
                     }
                 }
+
             }
-            contador_total(timinaT+adeninaT+citosinaT+guaninaT)
+            contador_total(timinaT+adeninaT+citosinaT+guaninaT) // [16]
             println("[consumidor] fin")
         } // fin de consumidor
 
