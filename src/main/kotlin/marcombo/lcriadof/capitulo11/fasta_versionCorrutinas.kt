@@ -40,9 +40,6 @@ fun main() {
 
 
 
-
-
-
     val canal = Channel<String>(sizeCanal)
     val cerrojo = Mutex()
 
