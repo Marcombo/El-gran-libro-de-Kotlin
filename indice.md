@@ -124,8 +124,27 @@ CAPÍTULO 10: CADENAS
 		10.11.2. Hexadecimal
 		10.11.3. Binario
 	10.12 Claves de acceso y funciones hash.
+	
+CAPÍTULO 11: CONCURRENCIA
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo11)
 
+	11.1 Thread.
+		11.1.1. Hilo principal y secundarios
+		11.1.2. Sección crítica de código
+			11.1.2.1 Semáforos
+			11.1.2.2 Monitores
+			11.1.2.3 El problema del productor-consumidor
+		11.1.3. Comparativas de rendimiento
+	11.2 Corrutinas.
+		11.2.1. Creación de corrutinas
+		11.2.2. runBlocking() gestinando corrutinas
+		11.2.3. Funciones de suspensión
+		11.2.4. Canales (Channel)
+		11.2.5. Comparativas de rendimiento
+	11.3 Recapitulando ideas.
 
+CAPÍTULO 12: DESPLIEGUES EN WAR DE RESTFUL
+[proyecto y código fuente](https://github.com/lcriadof/ktor-cap12)
 
 
 ANEXOS
