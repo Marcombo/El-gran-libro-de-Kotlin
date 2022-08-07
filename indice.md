@@ -73,7 +73,8 @@ CAPÍTULO 7: FICHEROS
 	7.6 Excel y CSVs.	
 	7.7 Json.	
 	7.9 ePub.
-	7.10 Zip
+	7.10 Zip.
+	7.11 FASTA (fa).
 
 CAPÍTULO 8: BASES DE DATOS	
 [código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo8)
@@ -104,6 +105,26 @@ CAPÍTULO 9: NÚMEROS.
 	9.7 Trigonometría.	
 	9.8 Calculo de integrales.	
 	9.9 Transformada rápida de Fourier.	
+
+CAPÍTULO 10: CADENAS
+[código fuente](/src/main/kotlin/marcombo/lcriadof/capitulo10)
+
+	10.1 Cadenas.
+	10.2 Concatenar Strings.
+	10.3 Acceso a los caracteres de un String.
+	10.4 Sutil diferencia entre vacios y/o espacios.
+	10.5 Arrays de Strings.
+	10.6 Maps.
+	10.7 Rellenando Strings.
+	10.8 Quitando espacios de un Strings.
+	10.9 Obtener términos de un Strings.
+	10.10 Subcadenas.
+	10.11 Conversores.
+		10.11.1. Ascii
+		10.11.2. Hexadecimal
+		10.11.3. Binario
+	10.12 Claves de acceso y funciones hash.
+
 
 
 
