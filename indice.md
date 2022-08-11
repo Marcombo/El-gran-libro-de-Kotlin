@@ -151,6 +151,7 @@ CAPÍTULO 12: DESPLIEGUES EN WAR DE RESTFUL
 	12.3 Arquitesctura en tres capas	
 	12.4 Capa de negocio	
 		12.4.1. Acercamiento a ktor	
+		12.4.2. Configuraciones de servidores
 		12.4.3. EL proyecto ktor-cap12	
 			12.4.3.1 Serialización y deserialización	
 			12.4.3.2 Enrutamiento	
