@@ -49,6 +49,10 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 - [jdsp](https://github.com/psambit9791/jDSP) - libreria Java para el procesado de señales digitales
 
 
+
+## Herramienta utilizada para verificar hash
+[den4b](http://www.den4b.com/)
+
 ## Máquina virtual:
 descargar máquina virtual:  
 [PRIMERA ALTERNATIVA](https://drive.google.com/file/d/1-BIkKU7vMwF3mX4UWgIzu4HaW-a-KjPq/view?usp=sharing), 
