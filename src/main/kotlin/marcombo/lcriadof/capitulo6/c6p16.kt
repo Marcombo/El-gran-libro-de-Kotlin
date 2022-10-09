@@ -25,6 +25,6 @@ fun main() {
     println("[numero] es "+o.numero) // 5
     o.numero=num*2 // 6
     println("[numero] es "+o.numero) // 7
-    println("[cte1] es "+o.cte1+" (inicializada tardiamente con lazy)") // 8
+    println("[cte1] es "+o.cte1+" (inicializada tardíamente con lazy)") // 8
 
 }
