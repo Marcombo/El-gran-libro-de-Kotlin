@@ -20,7 +20,7 @@ fun main() {
 
 
     runBlocking()  {
-        println("mensaja 1")
+        println("mensaje 1")
         launch() {
             println("\nparar")
             delay(10) // da igual el tiempo que ponga, la corrutina siempre termina y despues termina el prog principal
