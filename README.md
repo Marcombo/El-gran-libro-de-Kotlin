@@ -68,6 +68,6 @@ Kubuntu20.04_AtreveteConKotlin.ova (size: 5,62 GB)
 ## Docker con Tomcat 9 y aplicación war "ktor-cap12":
 docker push lcriadof/ktor-cap12:v1
 
-[URL]([https://drive.google.com/file/d/1mh1OXmO0LWq2aAprGYsbQQscIT4TricW/view?usp=sharing](https://hub.docker.com/r/lcriadof/ktor-cap12)), 
+[ir a docker hub]([https://drive.google.com/file/d/1mh1OXmO0LWq2aAprGYsbQQscIT4TricW/view?usp=sharing](https://hub.docker.com/r/lcriadof/ktor-cap12) 
 
 
