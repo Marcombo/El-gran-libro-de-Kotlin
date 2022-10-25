@@ -66,14 +66,7 @@ Kubuntu20.04_AtreveteConKotlin.ova (size: 5,62 GB)
     SHA512: 1f81ea21bcc1cc89bd315b73e218e71a74d9ef4821143f6e44b1c3f7229f13810711f30da7e67982f7d2e513638f6a2ed6801f403a90338adba360ea17967355
 
 ## Docker con Tomcat 9 y aplicación war "ktor-cap12":
-descargar docker:  
-[PRIMERA ALTERNATIVA](https://drive.google.com/file/d/1mh1OXmO0LWq2aAprGYsbQQscIT4TricW/view?usp=sharing), 
-
-    CRC32: a24fb563
-    MD5: 5c176a59a6914f7dd7ed4e48efa58a07
-    SHA1: 73f1f8701b2b05b39461cf12e2d90169f5eecd77
-    SHA256: 10c08fc4e7b44375595a19bd1ebbcd66975cf55765d0783046700f3b3be1f7cc
-    SHA512: 8f712b4a0cca20e6ead9ebfb5f07b8db2b758a77e3ec4833731da3991d858d63b802ec8fe3c92da5f919399c524db7f3a90ac2fd7df805d477524aa7a17f19c5
-
+docker push lcriadof/ktor-cap12:tagname
+[URL](https://drive.google.com/file/d/1mh1OXmO0LWq2aAprGYsbQQscIT4TricW/view?usp=sharing), 
 
 
