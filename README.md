@@ -1,5 +1,5 @@
 # El gran libro de Kotlin
-(para programadores de back end)
+(para programadores de back end): EN FASE DE EDICIÓN, MUY PRONTO A LA VENTA
 
 Editor: [Marcombo](https://www.marcombo.com/)
 , autor: [Luis Criado Fernández](http://luis.criado.online/)
