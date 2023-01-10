@@ -55,7 +55,7 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 
 ## Máquina virtual:
 
-Para facilitar estas pruebas del código del capítulo dedicado a bases de datos 
+Para facilitar las pruebas del código del capítulo dedicado a bases de datos 
 
 
 #### Primera alternativa:  
