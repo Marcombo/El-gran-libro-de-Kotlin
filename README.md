@@ -53,9 +53,9 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 ## Herramienta utilizada para verificar hash
 [den4b](http://www.den4b.com/)
 
-## Máquina virtual:
+## Sobre el CAPÍTULO 8: BASES DE DATOS
 
-Para facilitar las pruebas del código del capítulo dedicado a bases de datos 
+Para facilitar las pruebas del código de este capítulo tiene las siguientes posibilidades: 
 
 
 #### Primera alternativa:  
