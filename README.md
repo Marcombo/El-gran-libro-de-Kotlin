@@ -58,7 +58,7 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 Para facilitar estas pruebas del código del capítulo dedicado a bases de datos 
 
 
-Primera alternativa:  
+### Primera alternativa:  
 
 Máquina virtual de osboxes.org. Contiene un sistema Linux Kubuntu, en el cual he instalado Docker y todas las imágenes utilizadas en este libro. 
 
@@ -72,17 +72,17 @@ Kubuntu20.04_AtreveteConKotlin.ova (size: 5,62 GB)
     SHA256: 152fd1022d1931d3a2ab8620f423303d0b52c638960de8e3d9497131209614da
     SHA512: 1f81ea21bcc1cc89bd315b73e218e71a74d9ef4821143f6e44b1c3f7229f13810711f30da7e67982f7d2e513638f6a2ed6801f403a90338adba360ea17967355
 
-Segunda alternativa:  
+### Segunda alternativa:  
 
-Si le resulta más cómodo instalar los dockers en local o en su propia máquina de pruebas, indico todas las imágenes utilizadas:
+Si lo prefiere puede instalar los dockers en local o en su propia máquina de pruebas, indico todas las imágenes utilizadas:
 
-  docker pull mysql
-  docker pull mariadb
-  docker pull epiclabs/docker-oracle-xe-11g
-  docker pull redis
-  docker pull mongo
-  docker pull stain/jena-fuseki
-  docker pull franzinc/agraph
+    docker pull mysql
+    docker pull mariadb
+    docker pull epiclabs/docker-oracle-xe-11g
+    docker pull redis
+    docker pull mongo
+    docker pull stain/jena-fuseki
+    docker pull franzinc/agraph
 
 
 
