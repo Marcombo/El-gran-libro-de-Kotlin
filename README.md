@@ -54,8 +54,15 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 [den4b](http://www.den4b.com/)
 
 ## Máquina virtual:
-descargar máquina virtual:  
-[PRIMERA ALTERNATIVA](https://drive.google.com/file/d/1-BIkKU7vMwF3mX4UWgIzu4HaW-a-KjPq/view?usp=sharing), 
+
+Para facilitar estas pruebas del código del capítulo dedicado a bases de datos 
+
+
+Primera alternativa:  
+
+Máquina virtual de osboxes.org. Contiene un sistema Linux Kubuntu, en el cual he instalado Docker y todas las imágenes utilizadas en este libro. 
+
+[MAQUINA VIRTUAL](https://drive.google.com/file/d/1-BIkKU7vMwF3mX4UWgIzu4HaW-a-KjPq/view?usp=sharing), 
 
 Kubuntu20.04_AtreveteConKotlin.ova (size: 5,62 GB)
 
@@ -64,6 +71,20 @@ Kubuntu20.04_AtreveteConKotlin.ova (size: 5,62 GB)
     SHA1: 12ab7e7847c6df26ead3b7a63bec01a2333442c7
     SHA256: 152fd1022d1931d3a2ab8620f423303d0b52c638960de8e3d9497131209614da
     SHA512: 1f81ea21bcc1cc89bd315b73e218e71a74d9ef4821143f6e44b1c3f7229f13810711f30da7e67982f7d2e513638f6a2ed6801f403a90338adba360ea17967355
+
+Segunda alternativa:  
+
+Si le resulta más cómodo instalar los dockers en local o en su propia máquina de pruebas, indico todas las imágenes utilizadas:
+
+  docker pull mysql
+  docker pull mariadb
+  docker pull epiclabs/docker-oracle-xe-11g
+  docker pull redis
+  docker pull mongo
+  docker pull stain/jena-fuseki
+  docker pull franzinc/agraph
+
+
 
 ## Docker con Tomcat 9 y aplicación war "ktor-cap12":
 docker push lcriadof/ktor-cap12:v1
