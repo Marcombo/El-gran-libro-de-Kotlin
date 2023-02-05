@@ -48,6 +48,24 @@ El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 #### Misceláneo:
 - [jdsp](https://github.com/psambit9791/jDSP) - libreria Java para el procesado de señales digitales
 
+## FAQ
+Problemas al ejecutar los diferentes programas del proyecto (run)
+
+    Incluid las siguientes líneas en el fichero de extensión "iml":
+        <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />  
+        <sourceFolder url="file://$MODULE_DIR$/src/main/kotlin" isTestSource="false" />  
+
+    Descripción: por defecto no me permite "run"
+    
+    Solución: compruebe el fichero de extensión "iml" de su proyecto, debe contener las líneas, indicadas anteriormente, en su correspondiente lugar:
+    
+                <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+                  <output url="file://$MODULE_DIR$/target/classes" />
+                  <output-test url="file://$MODULE_DIR$/target/test-classes" />
+                  <content url="file://$MODULE_DIR$">
+                        <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+                        <sourceFolder url="file://$MODULE_DIR$/src/main/kotlin" isTestSource="false" />
+
 
 
 ## Herramienta utilizada para verificar hash
