@@ -4,9 +4,11 @@
 Editor: [Marcombo](https://www.marcombo.com/)
 , autor: [Luis Criado Fernández](http://luis.criado.online/)
 
-Véase 
+
+Véase:
 
     [licencia del código fuente](LICENSE.txt)
+    
     [Fe de erratas](fe-de-erratas.md)
 
 ## Descripción
