@@ -1,5 +1,5 @@
 # Fe de erratas
-A pesar de los múltiples procesos de revisión y corrección a los que el libro ha sido sometido, hemos detectado las siguientes erratas en la primera edición:
+A pesar de los múltiples procesos de revisión y corrección a los que el libro ha sido sometido, hemos detectado la siguiente errata en la primera edición:
 
 ### página 166
 
