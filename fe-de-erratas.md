@@ -13,3 +13,8 @@ A pesar de los múltiples procesos de revisión y corrección a los que el libro
     WHERE{
         ?lenguaje  rdf:type   dbpedia-owl:ProgrammingLanguage .
     }
+
+### página 210
+
+La expresión para el cálculo del IMC tiene un error. En lugar de un producto se trata de un cociente
+IMC = peso (kg)/ [estatura (m)]2.
