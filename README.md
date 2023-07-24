@@ -99,7 +99,7 @@ Si lo prefiere puede instalar los dockers en local o en su propia máquina de pr
     docker pull mariadb
     docker pull epiclabs/docker-oracle-xe-11g
     docker pull redis
-    docker pull mongo
+    docker pull mongo:4.4.3
     docker pull stain/jena-fuseki
     docker pull franzinc/agraph
 
